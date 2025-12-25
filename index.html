@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JULIA NAILS — Премиальный маникюр в Иркутске</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink-soft: #f6dfe4;
+      --pink-powder: #f2cfd6;
+      --milk: #fffdfb;
+      --nude: #d8bfa8;
+      --gold: rgba(215, 183, 137, 0.6);
+      --text-dark: #3a2f2f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--milk);
+      color: var(--text-dark);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--pink-soft), var(--pink-powder));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 0 0 60px 60px;
+    }
+
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+    .hero p { margin: 15px 0 30px; }
+
+    .btn {
+      padding: 14px 36px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--nude), var(--gold));
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .about { text-align: center; max-width: 700px; }
+
+    .services-grid,
+    .why-grid,
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card,
+    .why-item,
+    .review-card {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 40px auto 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.4s;
+    }
+
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    .contact { text-align: center; }
+
+    footer {
+      background: linear-gradient(135deg, var(--pink-soft), var(--pink-powder));
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 60px 60px 0 0;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div>
+    <h1>JULIA NAILS</h1>
+    <p>Премиальный маникюр в Иркутске</p>
+    <a href="#contact" class="btn">Записаться на маникюр</a>
+  </div>
+</div>
+
+<section class="about fade">
+  <h2>О мастере</h2>
+  <p>
+    Я — Юлия, мастер маникюра. Аккуратность, стерильность и любовь к деталям —
+    основа моей работы. Каждый маникюр создаётся индивидуально.
+  </p>
+</section>
+
+<section class="fade">
+  <h2 style="text-align:center;">Услуги</h2>
+  <div class="services-grid">
+    <div class="service-card"><h3>Маникюр</h3><p>от 1500 ₽</p></div>
+    <div class="service-card"><h3>Гель-лак</h3><p>от 2000 ₽</p></div>
+    <div class="service-card"><h3>Дизайн ногтей</h3><p>от 500 ₽</p></div>
+  </div>
+</section>
+
+<section class="fade">
+  <h2 style="text-align:center;">Мои работы</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371" alt="nails">
+  </div>
+</section>
+
+<section class="fade">
+  <h2 style="text-align:center;">Почему выбирают JULIA NAILS</h2>
+  <div class="why-grid">
+    <div class="why-item">Стерильные инструменты</div>
+    <div class="why-item">Премиальные материалы</div>
+    <div class="why-item">Индивидуальный дизайн</div>
+    <div class="why-item">Уютная атмосфера</div>
+  </div>
+</section>
+
+<section class="fade">
+  <h2 style="text-align:center;">Отзывы</h2>
+  <div class="reviews-grid">
+    <div class="review-card">Идеальная форма и дизайн ✨</div>
+    <div class="review-card">Лучший маникюр в Иркутске 💗</div>
+    <div class="review-card">Очень аккуратно и красиво</div>
+  </div>
+</section>
+
+<section id="contact" class="contact fade">
+  <h2>Запись и контакты</h2>
+  <p>Иркутск</p>
+  <a href="#" class="btn">WhatsApp / Instagram</a>
+</section>
+
+<footer>
+  <strong>JULIA NAILS</strong><br>
+  © Иркутск
+</footer>
+
+<div class="lightbox" id="lightbox"><img src=""></div>
+
+<script>
+  const fades = document.querySelectorAll('.fade');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+  }, { threshold: 0.2 });
+  fades.forEach(f => observer.observe(f));
+
+  const img = document.querySelector('.gallery-grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = lightbox.querySelector('img');
+
+  img.onclick = () => {
+    lbImg.src = img.src;
+    lightbox.style.display = 'flex';
+  };
+
+  lightbox.onclick = () => lightbox.style.display = 'none';
+</script>
+
+</body>
+</html>
